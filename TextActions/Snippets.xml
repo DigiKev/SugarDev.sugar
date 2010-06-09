@@ -26,7 +26,7 @@ THE SOFTWARE.
 -->
 <action-recipes>
 	
-	<snippet id="com.gridlee.TextActions.Sugar.Zone" category="tools.actions.text.Snippets.Sugar">
+	<snippet id="com.gridlee.TextActions.Sugar.Zone" category="tools.actions.text.snippets.sugardev">
 		<title>Zone</title>
 		<text>
 <![CDATA[<zone name="${1:zone.name}">
@@ -46,7 +46,7 @@ THE SOFTWARE.
 		<text-trigger>zone</text-trigger>
 	</snippet>
     
-    <snippet id="com.gridlee.TextActions.Sugar.Snippet" category="tools.actions.text.Snippets.Sugar">
+    <snippet id="com.gridlee.TextActions.Sugar.Snippet" category="tools.actions.text.snippets.sugardev">
 		<title>Snippet</title>
 		<text>
 <![CDATA[<snippet id="$1" category="$2">
@@ -62,7 +62,7 @@ ${4:snippet text}
 		<text-trigger>snippet</text-trigger>
 	</snippet>
     
-    <snippet id="com.gridlee.TextActions.Sugar.Behavior" category="tools.actions.text.Snippets.Sugar">
+    <snippet id="com.gridlee.TextActions.Sugar.Behavior" category="tools.actions.text.snippets.sugardev">
     <title>Behavior</title>
     <text>
 <![CDATA[<behavior>
