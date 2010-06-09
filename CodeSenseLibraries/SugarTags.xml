@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <codesense version="1.0">
 
-	<set name="com.gridlee.sugardev.tags">
+	<set name="com.macrabbit.sugardev.tags">
 
 		<!-- Default behavior -->
 		<behavior>

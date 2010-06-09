@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <codesense>
-	
 	<!-- Sugar tags -->
 	<provider>
 		<selector>xml, xml *, xml tag.open, xml tag.self-closing</selector>
-		<completions>com.gridlee.sugardev.tags</completions>
+		<completions>com.macrabbit.sugardev.tags</completions>
 		<complete-match capture="2">(&lt;)([a-zA-Z0-9-]*)</complete-match>
 		<require-suffix>(\s|>|^)</require-suffix>
 	</provider>
-	
 </codesense>

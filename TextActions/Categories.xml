@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <action-categories>
 	<!-- Generic categories -->
-	<category id="tools.actions.text.snippets.sugardev" show="sub">
+	<category id="sugardev.snippets" show="sub">
 		<title>Sugar Development</title>
 	</category>
 
