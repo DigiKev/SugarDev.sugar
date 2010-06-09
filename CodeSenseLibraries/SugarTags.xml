@@ -1,192 +1,189 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <codesense version="1.0">
-
 	<set name="com.macrabbit.sugardev.tags">
-
 		<!-- Default behavior -->
 		<behavior>
 			<append-dynamic>
-				<matched-suffix>(\s*:)|[^:]</matched-suffix>
-				<transform-into>(?1::>$0&lt;/${completion}>)</transform-into>
+				<matched-suffix>(\s*)|$</matched-suffix>
+				<transform-into>>$1&lt;/${completion}>$0</transform-into>
 			</append-dynamic>
 		</behavior>
 		
 		<completion string="action-alias">
-		    <behavior>
-                <append-dynamic>
-                    <matched-suffix>(\s*:)|[^:]</matched-suffix>
-                    <transform-into>(?1:: id="$1" category="$2">$0&lt;/action-alias></transform-into>
-                </append-dynamic>
-            </behavior>
-
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into> id="$1" category="$2">$3&lt;/${completion}>$0</transform-into>
+				</append-dynamic>
+			</behavior>
 		</completion>
 		
 		<completion string="action">
-		    <behavior>
-                <append-dynamic>
-                    <matched-suffix>(\s*:)|[^:]</matched-suffix>
-                    <transform-into>(?1:: id="$1" category="$2">$0&lt;/action></transform-into>
-                </append-dynamic>
-            </behavior>
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into> id="$1" category="$2">$3&lt;/${completion}>$0</transform-into>
+				</append-dynamic>
+			</behavior>
 
 		</completion>
 		
 		<completion string="capture">
-		    <behavior>
-                <append-dynamic>
-                    <matched-suffix>(\s*:)|[^:]</matched-suffix>
-                    <transform-into>(?1:: number="$1" name="$2"${3:>$0&lt;/capture}></transform-into>
-                </append-dynamic>
-            </behavior>
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into> number="$1" name="$2"${3:>$4&lt;/${completion}}>$0</transform-into>
+				</append-dynamic>
+			</behavior>
 
 		</completion>
 		
 		<completion string="category">
-		    <behavior>
-		        <append-dynamic>
-		            <matched-suffix>(\s*:)|[^:]</matched-suffix>
-                    <transform-into>(?1:: id="$1" show="$2">$0&lt;/capture></transform-into>
-		        </append-dynamic>
-		    </behavior>
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into> id="$1" show="$2">$3&lt;/${completion}>$0</transform-into>
+				</append-dynamic>
+			</behavior>
 		</completion>
 		
 		<completion string="codesense">
-		    <behavior>
-                <append-dynamic>
-                    <matched-suffix>(\s*:)|[^:]</matched-suffix>
-                    <transform-into>(?1::${1: version="$2"}>$0&lt;/codesense></transform-into>
-                </append-dynamic>
-            </behavior>
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into>${1: version="$2"}>$3&lt;/${completion}>$0</transform-into>
+				</append-dynamic>
+			</behavior>
 
 		</completion>
 		
 		<completion string="collection">
-		    <behavior>
-                <append-dynamic>
-                    <matched-suffix>(\s*:)|[^:]</matched-suffix>
-                    <transform-into>(?1::${1: name="$2"}>$0&lt;/collection></transform-into>
-                </append-dynamic>
-            </behavior>
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into>${1: name="$2"}>$3&lt;/${completion}>$0</transform-into>
+				</append-dynamic>
+			</behavior>
 
 		</completion>
 		
 		<completion string="complete-match">
-		    <behavior>
-                <append-dynamic>
-                    <matched-suffix>(\s*:)|[^:]</matched-suffix>
-                    <transform-into>(?1::${1: capture="$2"}>$0&lt;/complete-match></transform-into>
-                </append-dynamic>
-            </behavior>
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into>${1: capture="$2"}>$3&lt;/${completion}>$0</transform-into>
+				</append-dynamic>
+			</behavior>
 
 		</completion>
 		
 		<completion string="completion">
-		    <behavior>
-                <append-dynamic>
-                    <matched-suffix>(\s*:)|[^:]</matched-suffix>
-                    <transform-into>(?1::${1: string="$2"}${3:>$0&lt;/completion}></transform-into>
-                </append-dynamic>
-            </behavior>
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into>${1: string="$2"}${3:>$4&lt;/${completion}}>$0</transform-into>
+				</append-dynamic>
+			</behavior>
 
 		</completion>
 		
 		<completion string="include">
-		    <behavior>
-                <append-dynamic>
-                    <matched-suffix>(\s*:)|[^:]</matched-suffix>
-                    <transform-into>(?1:: ${1:syntax|collection|zone}="$2" />$0</transform-into>
-                </append-dynamic>
-            </behavior>
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into> ${1:syntax|collection|zone}="$2" $3/>$0</transform-into>
+				</append-dynamic>
+			</behavior>
 
 		</completion>
 		
 		<completion string="injection">
-		    <behavior>
-                <append-dynamic>
-                    <matched-suffix>(\s*:)|[^:]</matched-suffix>
-                    <transform-into>(?1:: name="$1" selector="$2" action="$3">$0&lt;/injection></transform-into>
-                </append-dynamic>
-            </behavior>
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into> name="$1" selector="$2" action="$3">$4&lt;/${completion}>$0</transform-into>
+				</append-dynamic>
+			</behavior>
 
 		</completion>
 		
 		<completion string="recipe">
-		    <behavior>
-                <append-dynamic>
-                    <matched-suffix>(\s*:)|[^:]</matched-suffix>
-                    <transform-into>(?1::${1: name="$2"}>$0&lt;/recipe></transform-into>
-                </append-dynamic>
-            </behavior>
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into>${1: name="$2"}>$3&lt;/${completion}>$0</transform-into>
+				</append-dynamic>
+			</behavior>
 
 		</completion>
 		
 		<completion string="set">
-		    <behavior>
-                <append-dynamic>
-                    <matched-suffix>(\s*:)|[^:]</matched-suffix>
-                    <transform-into>(?1::${1: name="$2"}>$0&lt;/set></transform-into>
-                </append-dynamic>
-            </behavior>
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into>${1: name="$2"}>$3&lt;/${completion}>$0</transform-into>
+				</append-dynamic>
+			</behavior>
 
 		</completion>
 		
 		<completion string="setting">
-		    <behavior>
-                <append-dynamic>
-                    <matched-suffix>(\s*:)|[^:]</matched-suffix>
-                    <transform-into>(?1::${1: name="$2"}>$0&lt;/set></transform-into>
-                </append-dynamic>
-            </behavior>
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into>${1: name="$2"}>$3&lt;/${completion}>$0</transform-into>
+				</append-dynamic>
+			</behavior>
 
 		</completion>
 		
 		<completion string="snippet">
-		    <behavior>
-                <append-dynamic>
-                    <matched-suffix>(\s*:)|[^:]</matched-suffix>
-                    <transform-into>(?1:: id="$1" category="$2">$0&lt;/snippet></transform-into>
-                </append-dynamic>
-            </behavior>
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into> id="$1" category="$2">$3&lt;/${completion}>$0</transform-into>
+				</append-dynamic>
+			</behavior>
 
 		</completion>
 		
 		<completion string="syntax">
-		    <behavior>
-                <append-dynamic>
-                    <matched-suffix>(\s*:)|[^:]</matched-suffix>
-                    <transform-into>(?1::${1: name="$2"}>$0&lt;/syntax></transform-into>
-                </append-dynamic>
-            </behavior>
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into>${1: name="$2"}>$3&lt;/${completion}>$0</transform-into>
+				</append-dynamic>
+			</behavior>
 
 		</completion>
 		
 		<completion string="text-trigger">
-		    <behavior>
-                <append-dynamic>
-                    <matched-suffix>(\s*:)|[^:]</matched-suffix>
-                    <transform-into>(?1::${1: key-equivalent="$2"}>$0&lt;/text-trigger></transform-into>
-                </append-dynamic>
-            </behavior>
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into>${1: key-equivalent="$2"}>$3&lt;/${completion}>$0</transform-into>
+				</append-dynamic>
+			</behavior>
 
 		</completion>
 		
 		<completion string="tool">
-		    <behavior>
-                <append-dynamic>
-                    <matched-suffix>(\s*:)|[^:]</matched-suffix>
-                    <transform-into>(?1:: type="$1" id="$2" category="$3">$0&lt;/tool></transform-into>
-                </append-dynamic>
-            </behavior>
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into> type="$1" id="$2" category="$3">$4&lt;/${completion}>$0</transform-into>
+				</append-dynamic>
+			</behavior>
 
 		</completion>
 		
 		<completion string="zone">
-		    <behavior>
-                <append-dynamic>
-                    <matched-suffix>(\s*:)|[^:]</matched-suffix>
-                    <transform-into>(?1::${1: name="$2"}>$0&lt;/zone></transform-into>
-                </append-dynamic>
-            </behavior>
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into>${1: name="$2"}>$3&lt;/${completion}>$0</transform-into>
+				</append-dynamic>
+			</behavior>
 
 		</completion>
 		
@@ -223,7 +220,5 @@
 		<completion string="value" />
 		<completion string="when-disabled" />
 		<completion string="zones" />
-		
 	</set>
-	
 </codesense>
