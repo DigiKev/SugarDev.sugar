@@ -3,7 +3,7 @@
 	
 	<!-- Sugar tags -->
 	<provider>
-		<selector>Sugar, Sugar *, Sugar tag.open, Sugar tag.self-closing</selector>
+		<selector>xml, xml *, xml tag.open, xml tag.self-closing</selector>
 		<completions>com.gridlee.sugardev.tags</completions>
 		<complete-match capture="2">(&lt;)([a-zA-Z0-9-]*)</complete-match>
 		<require-suffix>(\s|>|^)</require-suffix>
