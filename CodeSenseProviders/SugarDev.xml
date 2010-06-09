@@ -2,9 +2,17 @@
 <codesense>
 	<!-- Sugar tags -->
 	<provider>
-		<selector>xml, xml *, xml tag.open, xml tag.self-closing</selector>
+		<selector>text.xml, text.xml tag.open, text.xml tag.self-closing</selector>
 		<completions>com.macrabbit.sugardev.tags</completions>
 		<complete-match capture="2">(&lt;)([a-zA-Z0-9-]*)</complete-match>
 		<require-suffix>(\s|>|^)</require-suffix>
+	</provider>
+	
+	<!-- Sugar attributes -->
+	<provider>
+		<selector>tag.open.xml:has-child(name:capture(tag)) > attribute-name, tag.open.xml:has-child(name:capture(tag)) > punctuation.definition.end, tag.open.xml:has-child(name:capture(tag)) > punctuation.definition.self-closing, tag.open.xml:has-child(name:capture(tag))</selector>
+		<completions>com.macrabbit.sugardev.${tag}.attributes</completions>
+		<complete-match capture="2">(\s)([a-zA-Z0-9-]*)</complete-match>
+		<require-suffix>(\s|=|/?>|^)</require-suffix>
 	</provider>
 </codesense>

@@ -7,6 +7,7 @@
 				<matched-suffix>(\s*)|$</matched-suffix>
 				<transform-into>>$1&lt;/${completion}>$0</transform-into>
 			</append-dynamic>
+			<confirm-partial characters="-"/>
 		</behavior>
 		
 		<completion string="action-alias">
@@ -25,7 +26,6 @@
 					<transform-into> id="$1" category="$2">$3&lt;/${completion}>$0</transform-into>
 				</append-dynamic>
 			</behavior>
-
 		</completion>
 		
 		<completion string="capture">
@@ -35,7 +35,6 @@
 					<transform-into> number="$1" name="$2"${3:>$4&lt;/${completion}}>$0</transform-into>
 				</append-dynamic>
 			</behavior>
-
 		</completion>
 		
 		<completion string="category">
@@ -54,7 +53,6 @@
 					<transform-into>${1: version="$2"}>$3&lt;/${completion}>$0</transform-into>
 				</append-dynamic>
 			</behavior>
-
 		</completion>
 		
 		<completion string="collection">
@@ -64,7 +62,6 @@
 					<transform-into>${1: name="$2"}>$3&lt;/${completion}>$0</transform-into>
 				</append-dynamic>
 			</behavior>
-
 		</completion>
 		
 		<completion string="complete-match">
@@ -74,17 +71,33 @@
 					<transform-into>${1: capture="$2"}>$3&lt;/${completion}>$0</transform-into>
 				</append-dynamic>
 			</behavior>
-
 		</completion>
 		
 		<completion string="completion">
 			<behavior>
 				<append-dynamic>
 					<matched-suffix>(\s*)|$</matched-suffix>
-					<transform-into>${1: string="$2"}${3:>$4&lt;/${completion}}>$0</transform-into>
+					<transform-into> string="$1"/>$0</transform-into>
 				</append-dynamic>
 			</behavior>
-
+		</completion>
+		
+		<completion string="confirm">
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into> characters="$1"/>$0</transform-into>
+				</append-dynamic>
+			</behavior>
+		</completion>
+		
+		<completion string="confirm-partial">
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into> characters="$1"/>$0</transform-into>
+				</append-dynamic>
+			</behavior>
 		</completion>
 		
 		<completion string="include">
@@ -94,7 +107,6 @@
 					<transform-into> ${1:syntax|collection|zone}="$2" $3/>$0</transform-into>
 				</append-dynamic>
 			</behavior>
-
 		</completion>
 		
 		<completion string="injection">
@@ -104,7 +116,6 @@
 					<transform-into> name="$1" selector="$2" action="$3">$4&lt;/${completion}>$0</transform-into>
 				</append-dynamic>
 			</behavior>
-
 		</completion>
 		
 		<completion string="recipe">
@@ -114,7 +125,6 @@
 					<transform-into>${1: name="$2"}>$3&lt;/${completion}>$0</transform-into>
 				</append-dynamic>
 			</behavior>
-
 		</completion>
 		
 		<completion string="set">
@@ -124,7 +134,6 @@
 					<transform-into>${1: name="$2"}>$3&lt;/${completion}>$0</transform-into>
 				</append-dynamic>
 			</behavior>
-
 		</completion>
 		
 		<completion string="setting">
@@ -134,7 +143,6 @@
 					<transform-into>${1: name="$2"}>$3&lt;/${completion}>$0</transform-into>
 				</append-dynamic>
 			</behavior>
-
 		</completion>
 		
 		<completion string="snippet">
@@ -144,7 +152,6 @@
 					<transform-into> id="$1" category="$2">$3&lt;/${completion}>$0</transform-into>
 				</append-dynamic>
 			</behavior>
-
 		</completion>
 		
 		<completion string="syntax">
@@ -154,7 +161,6 @@
 					<transform-into>${1: name="$2"}>$3&lt;/${completion}>$0</transform-into>
 				</append-dynamic>
 			</behavior>
-
 		</completion>
 		
 		<completion string="text-trigger">
@@ -164,7 +170,6 @@
 					<transform-into>${1: key-equivalent="$2"}>$3&lt;/${completion}>$0</transform-into>
 				</append-dynamic>
 			</behavior>
-
 		</completion>
 		
 		<completion string="tool">
@@ -174,7 +179,6 @@
 					<transform-into> type="$1" id="$2" category="$3">$4&lt;/${completion}>$0</transform-into>
 				</append-dynamic>
 			</behavior>
-
 		</completion>
 		
 		<completion string="zone">
@@ -184,7 +188,6 @@
 					<transform-into>${1: name="$2"}>$3&lt;/${completion}>$0</transform-into>
 				</append-dynamic>
 			</behavior>
-
 		</completion>
 		
 		<completion string="action-identifier" />
@@ -220,5 +223,107 @@
 		<completion string="value" />
 		<completion string="when-disabled" />
 		<completion string="zones" />
+	</set>
+	
+	<!-- Sugar tag attributes -->
+	
+	<behavior>
+		<append-dynamic>
+			<matched-suffix>(\s*=)|[^=]</matched-suffix>
+			<transform-into>(?1::="$1"$0)</transform-into>
+		</append-dynamic>
+		<confirm characters="="/>
+		<confirm-partial characters="-"/>
+	</behavior>
+	
+	<set name="com.macrabbit.sugardev.action-alias.attributes">
+		<completion string="id"/>
+		<completion string="category"/>
+	</set>
+	
+	<set name="com.macrabbit.sugardev.action.attributes">
+		<completion string="id"/>
+		<completion string="category"/>
+	</set>
+	
+	<set name="com.macrabbit.sugardev.capture.attributes">
+		<completion string="number"/>
+		<completion string="name"/>
+	</set>
+	
+	<set name="com.macrabbit.sugardev.category.attributes">
+		<completion string="id"/>
+		<completion string="show"/>
+	</set>
+	
+	<set name="com.macrabbit.sugardev.codesense.attributes">
+		<completion string="version"/>
+	</set>
+	
+	<set name="com.macrabbit.sugardev.collection.attributes">
+		<completion string="name"/>
+	</set>
+	
+	<set name="com.macrabbit.sugardev.complete-match.attributes">
+		<completion string="capture"/>
+	</set>
+	
+	<set name="com.macrabbit.sugardev.completion.attributes">
+		<completion string="string"/>
+	</set>
+	
+	<set name="com.macrabbit.sugardev.confirm.attributes">
+		<completion string="characters"/>
+	</set>
+	
+	<set name="com.macrabbit.sugardev.confirm-partial.attributes">
+		<completion string="characters"/>
+	</set>
+	
+	<set name="com.macrabbit.sugardev.include.attributes">
+		<completion string="collection"/>
+		<completion string="syntax"/>
+		<completion string="zone"/>
+	</set>
+	
+	<set name="com.macrabbit.sugardev.injection.attributes">
+		<completion string="name"/>
+		<completion string="selection"/>
+		<completion string="action"/>
+	</set>
+	
+	<set name="com.macrabbit.sugardev.recipe.attributes">
+		<completion string="name"/>
+	</set>
+	
+	<set name="com.macrabbit.sugardev.set.attributes">
+		<completion string="name"/>
+	</set>
+	
+	<set name="com.macrabbit.sugardev.setting.attributes">
+		<completion string="name"/>
+	</set>
+	
+	<set name="com.macrabbit.sugardev.snippet.attributes">
+		<completion string="id"/>
+		<completion string="category"/>
+	</set>
+	
+	<set name="com.macrabbit.sugardev.syntax.attributes">
+		<completion string="name"/>
+	</set>
+	
+	<set name="com.macrabbit.sugardev.text-trigger.attributes">
+		<completion string="key-equivalent"/>
+	</set>
+	
+	<set name="com.macrabbit.sugardev.tool.attributes">
+		<completion string="id"/>
+		<completion string="category"/>
+		<completion string="type"/>
+	</set>
+	
+	<set name="com.macrabbit.sugardev.zone.attributes">
+		<completion string="name"/>
 	</set>
 </codesense>

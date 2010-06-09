@@ -19,7 +19,7 @@
 		<text-trigger>zone</text-trigger>
 	</snippet>
 	
-	<snippet id="com.macrabbit.sugardev.snippets.snippet" category="sugardev.snippetsdev">
+	<snippet id="com.macrabbit.sugardev.snippets.snippet" category="sugardev.snippets">
 		<title>Text Snippet</title>
 		<text>
 <![CDATA[<snippet id="$1" category="$2">
@@ -33,7 +33,7 @@
 		<text-trigger>snippet</text-trigger>
 	</snippet>
 	
-	<snippet id="com.macrabbit.sugardev.snippets.behavior" category="sugardev.snippetsdev">
+	<snippet id="com.macrabbit.sugardev.snippets.behavior" category="sugardev.snippets">
 		<title>CodeSense Behavior</title>
 		<text><![CDATA[<behavior>
 	<append-${1:static|dynamic}>
