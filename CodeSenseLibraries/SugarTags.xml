@@ -32,7 +32,7 @@
 			<behavior>
 				<append-dynamic>
 					<matched-suffix>(\s*)|$</matched-suffix>
-					<transform-into> number="$1" name="$2"${3:>$4&lt;/${completion}}>$0</transform-into>
+					<transform-into> number="$1" name="$2"/>$0</transform-into>
 				</append-dynamic>
 			</behavior>
 		</completion>
@@ -205,6 +205,7 @@
 		<completion string="itemizer" />
 		<completion string="label" />
 		<completion string="library" />
+		<completion string="matched-suffix"/>
 		<completion string="main-action-selector" />
 		<completion string="palette-label" />
 		<completion string="provider" />
@@ -220,9 +221,21 @@
 		<completion string="text" />
 		<completion string="title" />
 		<completion string="tool-recipes" />
+		<completion string="transform-into"/>
 		<completion string="value" />
 		<completion string="when-disabled" />
 		<completion string="zones" />
+	</set>
+	
+	<set name="com.macrabbit.sugardev.tags.standalone">
+		<behavior>
+			<append-dynamic>
+				<matched-suffix>(\s*)|$</matched-suffix>
+				<transform-into>/></transform-into>
+			</append-dynamic>
+		</behavior>
+		
+		<completion string="include-root-recipes"/>
 	</set>
 	
 	<!-- Sugar tag attributes -->

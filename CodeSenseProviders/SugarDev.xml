@@ -7,6 +7,12 @@
 		<complete-match capture="2">(&lt;)([a-zA-Z0-9-]*)</complete-match>
 		<require-suffix>(\s|>|^)</require-suffix>
 	</provider>
+	<provider>
+		<selector>text.xml, text.xml tag.open, text.xml tag.self-closing</selector>
+		<completions>com.macrabbit.sugardev.tags.standalone</completions>
+		<complete-match capture="2">(&lt;)([a-zA-Z0-9-]*)</complete-match>
+		<require-suffix>(\s|>|^)</require-suffix>
+	</provider>
 	
 	<!-- Sugar attributes -->
 	<provider>
