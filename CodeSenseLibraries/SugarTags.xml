@@ -203,6 +203,7 @@
 		<completion string="injections" />
 		<completion string="image" />
 		<completion string="itemizer" />
+		<completion string="key-equivalent"/>
 		<completion string="label" />
 		<completion string="library" />
 		<completion string="matched-suffix"/>
