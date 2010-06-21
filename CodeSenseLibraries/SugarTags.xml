@@ -100,6 +100,15 @@
 			</behavior>
 		</completion>
 		
+		<completion string="extension">
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into>${1: casesensitive="true"}>$2&lt;/${completion}>$0</transform-into>
+				</append-dynamic>
+			</behavior>
+		</completion>
+		
 		<completion string="include">
 			<behavior>
 				<append-dynamic>
@@ -114,6 +123,24 @@
 				<append-dynamic>
 					<matched-suffix>(\s*)|$</matched-suffix>
 					<transform-into> name="$1" selector="$2" action="$3">$4&lt;/${completion}>$0</transform-into>
+				</append-dynamic>
+			</behavior>
+		</completion>
+		
+		<completion string="language">
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into> id="$1">$2&lt;/${completion}>$0</transform-into>
+				</append-dynamic>
+			</behavior>
+		</completion>
+		
+		<completion string="match-content">
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into>${1: lines="$2"}>$3&lt;/${completion}>$0</transform-into>
 				</append-dynamic>
 			</behavior>
 		</completion>
@@ -196,7 +223,10 @@
 		<completion string="append-static" />
 		<completion string="behavior" />
 		<completion string="class" />
+		<completion string="combo"/>
 		<completion string="completions" />
+		<completion string="cut-off"/>
+		<completion string="detectors"/>
 		<completion string="end-selector" />
 		<completion string="ends-with" />
 		<completion string="expression" />
@@ -208,9 +238,11 @@
 		<completion string="library" />
 		<completion string="matched-suffix"/>
 		<completion string="main-action-selector" />
+		<completion string="name"/>
 		<completion string="palette-label" />
 		<completion string="provider" />
 		<completion string="require-suffix" />
+		<completion string="root-zone"/>
 		<completion string="selector" />
 		<completion string="settings" />
 		<completion string="setup" />
@@ -294,6 +326,10 @@
 		<completion string="characters"/>
 	</set>
 	
+	<set name="com.macrabbit.sugardev.extension.attributes">
+		<completion string="casesensitive"/>
+	</set>
+	
 	<set name="com.macrabbit.sugardev.include.attributes">
 		<completion string="collection"/>
 		<completion string="syntax"/>
@@ -304,6 +340,15 @@
 		<completion string="name"/>
 		<completion string="selection"/>
 		<completion string="action"/>
+	</set>
+	
+	<set name="com.macrabbit.sugardev.language.attributes">
+		<completion string="id"/>
+		<completion string="hidden"/>
+	</set>
+	
+	<set name="com.macrabbit.sugardev.match-content.attributes">
+		<completion string="lines"/>
 	</set>
 	
 	<set name="com.macrabbit.sugardev.recipe.attributes">
