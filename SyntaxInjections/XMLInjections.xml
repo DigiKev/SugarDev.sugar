@@ -5,7 +5,7 @@
 		<!-- <expression> -->
 		<zone name="sugartag.regex">
 		    <starts-with>
-		        <expression>(&lt;)(expression|complete-match)(>)</expression>
+		        <expression>(&lt;)(expression|complete-match|matched-suffix|transform-into|require-suffix|match-content)(>)</expression>
 		        <!-- I can't think of a good way to get the tag.open.xml definition here, so just copying stuff over from the XML sugar -->
 		        <capture number="0" name="tag.open.xml"/>
 		        <capture number="1" name="punctuation.definition.begin"/>

@@ -268,7 +268,9 @@
 			</append-dynamic>
 		</behavior>
 		
+		<completion string="false"/>
 		<completion string="include-root-recipes"/>
+		<completion string="true"/>
 	</set>
 	
 	<!-- Sugar tag attributes -->
