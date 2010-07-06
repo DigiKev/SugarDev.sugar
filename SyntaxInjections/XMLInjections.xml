@@ -5,7 +5,7 @@
 		<!-- <expression> -->
 		<zone name="sugartag.regex">
 		    <starts-with>
-		        <expression>(&lt;)(expression|complete-match|matched-suffix|transform-into|require-suffix|match-content)(>)</expression>
+		        <expression>(&lt;)(expression|complete-match|matched-suffix|require-suffix|match-content)(>)</expression>
 		        <!-- I can't think of a good way to get the tag.open.xml definition here, so just copying stuff over from the XML sugar -->
 		        <capture number="0" name="tag.open.xml"/>
 		        <capture number="1" name="punctuation.definition.begin"/>
@@ -22,6 +22,27 @@
 		    <subzones>
 		        <include syntax="espresso.built-in.regex-search-expression" />
 		    </subzones>
+		</zone>
+		<!--Regex replace-->
+		<zone name="sugartag.regex-replace">
+			<starts-with>
+			    <expression>(&lt;)(transform-into)(>)</expression>
+			    <!-- I can't think of a good way to get the tag.open.xml definition here, so just copying stuff over from the XML sugar -->
+			    <capture number="0" name="tag.open.xml"/>
+			    <capture number="1" name="punctuation.definition.begin"/>
+			    <capture number="2" name="name"/>
+			    <capture number="3" name="punctuation.definition.end"/>
+			</starts-with>
+			<ends-with>
+			    <expression>(&lt;/)(\2)(>)</expression>
+			    <capture number="0" name="tag.close.xml"/>
+			    <capture number="1" name="punctuation.definition.begin"/>
+			    <capture number="2" name="name"/>
+			    <capture number="3" name="punctuation.definition.end"/>
+			</ends-with>
+			<subzones>
+			    <include syntax="espresso.built-in.regex-replace-expression" />
+			</subzones>
 		</zone>
 	</injection>
 	
